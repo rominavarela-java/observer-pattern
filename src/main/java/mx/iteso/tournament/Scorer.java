@@ -18,6 +18,7 @@ public class Scorer {
 		this.number= number;
 		this.position= position;
 		this.scores= 0;
+		this.timestamp = 0;
 	}
 	
 	public void newScore(){

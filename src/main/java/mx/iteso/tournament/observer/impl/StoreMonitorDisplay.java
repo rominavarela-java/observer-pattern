@@ -19,9 +19,7 @@ public class StoreMonitorDisplay implements Observer, Displayable {
 
     public void display() {
     	//display general info
-        System.out.println("\n▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
-        System.out.println("▓▓");
-        System.out.println("▓▓ news @ MONITOR DISPLAY");
+        System.out.println("\n▓▓ news @ MONITOR DISPLAY");
         System.out.println(homeTeam + " - " + awayTeam);
         
         //find changes
@@ -44,14 +42,26 @@ public class StoreMonitorDisplay implements Observer, Displayable {
         if(lastScorer!=null)
             System.out.println(lastScorer);
         
-        System.out.println("                                                                                                ▓▓▓");
-        System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n");
     }
 
-    public void update(Team homeTeam, Team awayTeam) {    	
-    	this.homeTeam = homeTeam;
-        this.awayTeam = awayTeam;
+    public void update(Team homeTeam, Team awayTeam) { 	
+    	this.setHomeTeam(homeTeam);
+        this.setAwayTeam(awayTeam);
         display();
     }
-
+    
+    //getters and setters
+    public Team getHomeTeam(){
+    	return this.homeTeam;
+    }
+    public Team getAwayTeam(){
+    	return this.awayTeam;
+    }
+    
+    public void setHomeTeam(Team t){
+    	this.homeTeam= t;
+    }
+    public void setAwayTeam(Team t){
+    	this.awayTeam= t;
+    }
 }
