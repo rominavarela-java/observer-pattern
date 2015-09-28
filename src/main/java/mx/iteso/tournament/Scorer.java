@@ -29,7 +29,7 @@ public class Scorer {
 	@Override
 	public String toString(){
 		return " scorer:"
-				+ " { name:" + this.name
+				+ " { name: " + this.name
 				+ ", number: " + this.number
 				+ ", position: " + this.position
 				+ ", scores: " + this.scores

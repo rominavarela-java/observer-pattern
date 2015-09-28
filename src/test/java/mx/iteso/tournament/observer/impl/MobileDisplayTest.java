@@ -23,13 +23,24 @@ public class MobileDisplayTest {
     	Team t1= new Team("t1");
     	t1.addScorer("ray", "p1");
     	Team t2= new Team("t2");
-    	t1.addScorer("anti-ray", "p2");
+    	t2.addScorer("anti-ray", "p2");
     	
     	mobileDisplay.setHomeTeam(t1);
     	mobileDisplay.setAwayTeam(t2);
     	
+    	//no changes
+    	mobileDisplay.display();
+    	
+    	//1 change
+    	t1.getScorers().get(0).newScore();
+    	mobileDisplay.display();
+    	
+    	//more changes
+    	t2.getScorers().get(0).newScore();
     	mobileDisplay.display();
     }
+    
+    //if(s.getTimestamp()>lastTime)
     
     @Test
     public void update() {

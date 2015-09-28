@@ -24,11 +24,20 @@ public class StoreMonitorDisplayTest {
     	Team t1= new Team("t1");
     	t1.addScorer("ray", "p1");
     	Team t2= new Team("t2");
-    	t1.addScorer("anti-ray", "p2");
+    	t2.addScorer("anti-ray", "p2");
     	
     	storeMonitorDisplay.setHomeTeam(t1);
     	storeMonitorDisplay.setAwayTeam(t2);
     	
+    	//no changes
+    	storeMonitorDisplay.display();
+    	
+    	//1 change
+    	t1.getScorers().get(0).newScore();
+    	storeMonitorDisplay.display();
+    	
+    	//more changes
+    	t2.getScorers().get(0).newScore();
     	storeMonitorDisplay.display();
     }
     

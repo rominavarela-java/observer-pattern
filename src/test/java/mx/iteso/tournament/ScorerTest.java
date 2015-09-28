@@ -32,4 +32,23 @@ public class ScorerTest {
 		Assert.assertTrue(time1 < time2);
 		Assert.assertTrue(score2 == (score1+n));
 	}
+	
+	@Test
+	public void testToString() {
+		String name= "n1";
+		int number = (int) (Math.random() * 10);
+		String position = "p1";
+		int scores = (int) (Math.random() * 10);
+		
+		scorer.setName(name);
+		scorer.setNumber(number);
+		scorer.setPosition(position);
+		scorer.setScores(scores);
+		
+		String s= scorer.toString();
+		Assert.assertTrue(s.contains("name: " + name));
+		Assert.assertTrue(s.contains("number: " + number));
+		Assert.assertTrue(s.contains("position: " + position));
+		Assert.assertTrue(s.contains("scores: " + scores));
+	}
 }
